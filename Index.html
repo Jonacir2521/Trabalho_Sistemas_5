@@ -13,15 +13,33 @@
 </head>
 <body>
     <div id="Conteudo" style="text-align: center;">
+        <p>Adicione um produto a lista de compras</p>
+        <input type="text" id="citacao">
+        <button class="btn btn-primary" id="btn">Adicionar</button>
+        <h2>Lista de Compras</h2>
         <ul id="Lista">
-            <h2>Lista de Compras</h2>
             <li>Banana</li>
             <li>Maçã</li>
             <li>Abacate</li>
             <li>Abacaxi</li>
-        </ul>
-        
+        </ul>  
     </div>
+
+    <script>
+        var btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function(){
+            var citacao = document.getElementById("citacao");
+
+            var li = document.createElement("LI");
+            li.innerText = citacao.value;
+
+            var lista = document.getElementById("Lista");
+            lista.appendChild(li);
+            citacao.value = "";
+            citacao.focus();
+        });
+    </script>
     
 
 </body>
